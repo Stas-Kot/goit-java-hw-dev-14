@@ -18,6 +18,10 @@ public class NoteDto {
     }
 
     public Note toNote(){
-        return new Note(id, title, content);
+        Note note = new Note();
+        note.setId(id);
+        note.setTitle(title);
+        note.setContent(content);
+        return note;
     }
 }
