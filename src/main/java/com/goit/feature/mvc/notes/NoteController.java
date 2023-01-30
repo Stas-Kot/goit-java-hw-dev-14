@@ -28,13 +28,13 @@ public class NoteController {
     }
 
     @PostMapping("/delete")
-    public RedirectView delete(@RequestParam(name = "id") String noteId) {
+    public RedirectView delete(@RequestParam(name = "id") long noteId) {
         noteService.deleteById(noteId);
         return new RedirectView("list");
     }
 
     @GetMapping("/edit")
-    public ModelAndView edit(@RequestParam(name = "id") String id) {
+    public ModelAndView edit(@RequestParam(name = "id") long id) {
         ModelAndView result = new ModelAndView("notes/edit");
         Note note = noteService.getById(id);
         result.addObject("note", NoteDto.fromNote(note));

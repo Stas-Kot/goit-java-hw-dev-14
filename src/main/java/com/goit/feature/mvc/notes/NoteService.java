@@ -15,15 +15,14 @@ public class NoteService {
     }
 
     public synchronized Note add(Note note) {
-        note.setId(UUID.randomUUID().toString());
         return repository.save(note);
     }
 
-    public Note getById(String id) {
+    public Note getById(long id) {
         return repository.findById(id).orElseThrow(IllegalArgumentException::new);
     }
 
-    public synchronized void deleteById(String id) {
+    public synchronized void deleteById(long id) {
         repository.deleteById(id);
     }
 
