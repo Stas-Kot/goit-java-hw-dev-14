@@ -1,5 +1,5 @@
 CREATE TABLE note (
-    id VARCHAR(40) PRIMARY KEY,
-    title VARCHAR(300),
+    id VARCHAR(255) PRIMARY KEY,
+    title VARCHAR(500),
     content VARCHAR(2000)
 );
